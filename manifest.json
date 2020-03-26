@@ -1,0 +1,24 @@
+{
+  "name": "Getting Started Example",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "permissions": ["tabs"],
+  "browser_action": {
+    "default_icon": {
+      "16": "assets/codesmith.png"
+    },
+    "default_title": "codesmith_hack",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/*"],
+      "js": ["main.js"]
+    }
+  ],
+  "manifest_version": 2
+}
